@@ -20,5 +20,17 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Deploy 
+
+### Build
+```
+docker build -t wall/web:latest .
+```
+
+### Run
+```
+docker run -d --name wall-web \
+    -p 80:80 \
+    -e API_HOST=<api-host> \
+    wall/web:latest
+```
